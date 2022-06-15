@@ -51,16 +51,26 @@ void moveLeft() {
 }
 
 
+void stop() {
+  // Turns off all motors
+
+  digitalWrite(rightForward, LOW);
+  digitalWrite(rightReverse, LOW);
+  digitalWrite(leftForward, LOW);
+  digitalWrite(leftReverse, LOW);
+}
+
+
 void loop() {
   digitalWrite(rightside, HIGH);
   digitalWrite(leftside, HIGH);
   
   moveForward();
+  delay(800);
+  stop();
   delay(400);
   moveBackwards();
   delay(400);
-  moveRight();
-  delay(400);
-  moveLeft();
+  stop();
   delay(400);
 }
